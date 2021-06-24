@@ -19,7 +19,7 @@ class App extends Component {
       username: user.username,
       scores: user.scores,
     });
-    this.props.history.push("/board");
+    this.props.history.push("/memoryapp");
   };
 
   setNewUser = (newUser) => {
