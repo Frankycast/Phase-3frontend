@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 export default class SignUp extends Component {
   state = {
+    id: Math.random,
     username: "",
     password: "",
   };
@@ -39,7 +40,7 @@ export default class SignUp extends Component {
     console.log(this.state)
     return (
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor="username">New username:</label>
+        <label htmlFor="username">New Username:</label>
         <input
           type="text"
           name="username"

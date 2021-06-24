@@ -2,7 +2,7 @@ import "./App.css";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import React, { Component } from "react";
-import Board from "./Board";
+import MemoryApp from "./MemoryApp";
 import { Switch, Route, withRouter, Link } from "react-router-dom";
 
 class App extends Component {
@@ -22,11 +22,11 @@ class App extends Component {
     this.props.history.push("/board");
   };
 
-  setNewUser = (user) => {
+  setNewUser = (newUser) => {
     this.setState({
-      id: user.id,
-      username: user.username,
-      scores: user.scores,
+      id: newUser.id,
+      username: newUser.username,
+      scores: newUser.scores,
     });
     this.props.history.push("/login");
   };
@@ -39,12 +39,12 @@ class App extends Component {
             <Login setUser={this.setUser} />
             <Link to="/signup">Sign Up</Link>
           </Route>
-          <Route exact path="/board">
-            <Board />
-          </Route>
           <Route exact path="/signup">
             <SignUp setUser={this.setNewUser}/>
             <Link to="/login">Log in</Link>
+          </Route>
+          <Route exact path="/memoryapp">
+            <MemoryApp />
           </Route>
         </Switch>
       </div>
