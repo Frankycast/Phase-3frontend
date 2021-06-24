@@ -29,7 +29,7 @@ export default class SignUp extends Component {
       .then((r) => r.json())
       .then((potentialUser) => {
         if (!potentialUser.error) {
-          this.props.setNewUser(potentialUser);
+          this.props.setUser(potentialUser);
         } else {
           alert(potentialUser.error);
         }

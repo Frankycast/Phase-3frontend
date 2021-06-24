@@ -10,15 +10,15 @@ import "./style.css";
 const Finish = ({ handleRestart, showModal, bestScore, moves }) => {
   return (
     <div>
-      <Dialog
+      {/* <Dialog
         open={showModal}
         disableBackdropClick
         disableEscapeKeyDown
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-      >
+      > */}
         <h2>Memory Game</h2>
-        <DialogTitle id="alert-dialog-title">
+        {/* <DialogTitle id="alert-dialog-title">
           Hurray !!! You completed the game !!
         </DialogTitle>
         <DialogContent>
@@ -30,8 +30,8 @@ const Finish = ({ handleRestart, showModal, bestScore, moves }) => {
           <Button onClick={handleRestart} color="primary">
             Restart
           </Button>
-        </DialogActions>
-      </Dialog>
+        </DialogActions> */}
+      {/* </Dialog> */}
     </div>
   );
 };

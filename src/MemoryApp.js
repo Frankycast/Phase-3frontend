@@ -45,10 +45,28 @@ const App = () => {
 
   const checkCompletion = () => {
     if (Object.keys(matchedCards).length === uniqueCardsArray.length) {
-      setShowModal(true);
-      const highScore = Math.min(moves, bestScore);
-      setBestScore(highScore);
-      localStorage.setItem("bestScore", highScore);
+      // setShowModal(true);
+      // const highScore = Math.min(moves, bestScore);
+      // setBestScore(highScore);
+      // localStorage.setItem("bestScore", highScore);
+      fetch("http://localhost:9393/scores", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(moves),
+        })
+        // .then((r) => r.json())
+        // .then((workoutObj) =>{
+        //     console.log(workoutObj)
+        //     this.props.getWorkOutObj(workoutObj)
+        //     this.setState({
+        //         name: '',
+        //         body_part:''
+        //     })
+        //     this.props.handleClick()
+        //     this.props.toggleExerciseForm()
+        // });
     }
   };
 

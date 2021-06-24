@@ -3,6 +3,7 @@ import Login from "./Login";
 import SignUp from "./SignUp";
 import React, { Component } from "react";
 import MemoryApp from "./MemoryApp";
+import ScoresContainer from "./ScoresContainer"
 import { Switch, Route, withRouter, Link } from "react-router-dom";
 
 class App extends Component {
@@ -18,20 +19,25 @@ class App extends Component {
       id: user.id,
       username: user.username,
       scores: user.scores,
-    });
+    } );
     this.props.history.push("/memoryapp");
+
   };
 
-  setNewUser = (newUser) => {
-    this.setState({
-      id: newUser.id,
-      username: newUser.username,
-      scores: newUser.scores,
-    });
-    this.props.history.push("/login");
-  };
+  // componentDidMount(){
+  // fetch("http://localhost:9393/users")
+  // .then((r) => r.json())
+  // .then((usersArray) => {
+  //   this.setState({
+  //     usersInfo: usersArray
+  //   })
+  // });
+  // }
+
 
   render() {
+    console.log(this.state.scores)
+
     return (
       <div className="App">
         <Switch>
@@ -40,11 +46,12 @@ class App extends Component {
             <Link to="/signup">Sign Up</Link>
           </Route>
           <Route exact path="/signup">
-            <SignUp setUser={this.setNewUser}/>
+            <SignUp setUser={this.setUser}/>
             <Link to="/login">Log in</Link>
           </Route>
           <Route exact path="/memoryapp">
             <MemoryApp />
+            <ScoresContainer scores={this.state.scores}/> 
           </Route>
         </Switch>
       </div>
