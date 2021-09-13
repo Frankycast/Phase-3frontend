@@ -54,7 +54,7 @@ const App = () => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(moves),
+            body: JSON.stringify({score_val : moves}),
         })
         // .then((r) => r.json())
         // .then((workoutObj) =>{

@@ -50,8 +50,8 @@ class App extends Component {
             <Link to="/login">Log in</Link>
           </Route>
           <Route exact path="/memoryapp">
-            <MemoryApp />
-            <ScoresContainer scores={this.state.scores}/> 
+            <MemoryApp id={this.state.id} scores={this.state.scores}/>
+            <ScoresContainer id={this.state.id} scores={this.state.scores}/> 
           </Route>
         </Switch>
       </div>

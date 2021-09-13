@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 export default class SignUp extends Component {
   state = {
-    id: Math.random,
     username: "",
     password: "",
   };

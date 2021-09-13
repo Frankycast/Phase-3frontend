@@ -2,6 +2,21 @@ import React, { Component } from 'react'
 import ScoreRow from './ScoreRow'
 
 export default class ScoresContainer extends Component {
+
+    state={
+        id: this.props.id,
+        scores: this.props.scores
+    }
+
+    // componentDidMount(){
+    //     fetch("http://localhost:9393/scores")
+    //       .then(res => res.json())
+    //       .then(pokemonArr => {
+    //         this.setState({
+    //           pokemons: pokemonArr
+    //         })
+    //       })
+    //   }
     
     // renderScore=()=>{
     //     return this.props.scores.map((userScores) => { return <ScoreRow userScores={userScores}/>
@@ -13,7 +28,7 @@ export default class ScoresContainer extends Component {
         console.log(renderScore)
         return (
             <div>
-                {renderScore}
+                Score table
             </div>
         )
     }
